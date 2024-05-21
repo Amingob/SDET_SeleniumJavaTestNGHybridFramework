@@ -15,7 +15,7 @@ public class T001LoginTest extends BaseTest {
 
         logger.info("Test: t001LoginTest_With_Valid_Username_And_Valid_PassWord : has started");
 
-        wdriver.get("https://demo.guru99.com/V4/");
+        wdriver.get(applicationURL);
         loginPage = new LoginPage(wdriver);
         loginPage.submitUsername(txtUsername);
         loginPage.submitPassword(txtPassword);
@@ -35,7 +35,7 @@ public class T001LoginTest extends BaseTest {
 
         logger.info("Test: t001LoginTest_With_Valid_Username_And_InValid_PassWord : has started");
 
-        wdriver.get("https://demo.guru99.com/V4/");
+        wdriver.get(applicationURL);
         loginPage = new LoginPage(wdriver);
         loginPage.submitUsername(txtUsername);
         loginPage.submitPassword(txtPassword+"1");
@@ -55,7 +55,7 @@ public class T001LoginTest extends BaseTest {
 
         logger.info("Test: t001LoginTest_With_InValid_Username_And_Valid_PassWord : has started");
 
-        wdriver.get("https://demo.guru99.com/V4/");
+        wdriver.get(applicationURL);
         loginPage = new LoginPage(wdriver);
         loginPage.submitUsername("Q"+txtUsername1+"Q");
         Thread.sleep(3000);
@@ -75,7 +75,7 @@ public class T001LoginTest extends BaseTest {
 
         logger.info("Test: t001LoginTest_With_INValid_Username_And_INValid_PassWord : has started");
 
-        wdriver.get("https://demo.guru99.com/V4/");
+        wdriver.get(applicationURL);
         loginPage = new LoginPage(wdriver);
         loginPage.submitUsername(txtUsername+"Q");
         loginPage.submitPassword(txtPassword+"1");
@@ -95,7 +95,7 @@ public class T001LoginTest extends BaseTest {
 
         logger.info("Test: t001LoginTest_With_No_Username_And_No_PassWordd : has started");
 
-        wdriver.get("https://demo.guru99.com/V4/");
+        wdriver.get(applicationURL);
         loginPage = new LoginPage(wdriver);
         loginPage.submitUsername(emptyString);
         loginPage.submitPassword(emptyString);
