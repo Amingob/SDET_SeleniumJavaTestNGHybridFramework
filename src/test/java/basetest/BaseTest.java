@@ -6,6 +6,9 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.edge.EdgeDriver;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
+import utilities.ReadConfig;
+
+import java.io.FileNotFoundException;
 import java.util.concurrent.TimeUnit;
 
 
@@ -14,18 +17,23 @@ public class BaseTest {
 
     public WebDriver wdriver;
 
-    public String txtUsername = "mngr568917";
-    public String txtUsername1 = "mngr568917T";
-    public String txtPassword = "YnArYrU";
-    public String emptyString = "";
+    ReadConfig readconfig = new ReadConfig();
+
+    public String applicationURL = readconfig.getApplicationURL();
+    public String txtUsername = readconfig.getUserName();
+    public String txtUsername1 = readconfig.getUserName1();
+    public String txtPassword = readconfig.getPassword();
+    public String emptyString = readconfig.getEmptyString();
+    public String edgePath = readconfig.getEdgePath();
 
     public Logger logger;
+
 
 
     @BeforeMethod
     public void setUp(){
 
-        System.setProperty("webdriver.edge.driver","./Drivers/msedgedriver.exe");
+        System.setProperty("webdriver.edge.driver",""+edgePath+"");
         wdriver = new EdgeDriver();
         wdriver.manage().window().maximize();
         wdriver.manage().deleteAllCookies();
