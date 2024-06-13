@@ -45,7 +45,15 @@ public class ReadConfig {
     }
 
     public String getEdgePath(){
-        String edgePath = pro.getProperty("edgepath");
+        String edgePath = pro.getProperty("edgePath");
         return edgePath;
+    }
+    public String getFireFoxPath(){
+        String fireFoxPath = pro.getProperty("fireFoxPath");
+        return fireFoxPath;
+    }
+    public String getChromePath(){
+        String chromePath = pro.getProperty("chromePath");
+        return chromePath;
     }
 }
